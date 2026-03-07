@@ -15,7 +15,7 @@ int main() {
     
     for(int i = 0; i < 10; i++)
     {
-        printf(" %s", letra[i]);
+        printf(" %c", letra[i]);
     } 
            
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
