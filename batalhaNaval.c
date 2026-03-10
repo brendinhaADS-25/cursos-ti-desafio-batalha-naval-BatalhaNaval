@@ -8,16 +8,69 @@ int main() {
     // Nível Novato - Posicionamento dos Navios
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     
-    printf("JOGO BATALHA NAVAL!!!\n"); 
-    printf("*** TABULEIRO ***\n"); 
+    int tabuleiro[10][10]; 
+    int horizontal[3] = {3, 3, 3}; 
+    int vertical[3] = {3, 3, 3}; 
+    int i, j; 
 
-    char letra [10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'I'}; 
+    printf("JOGO BATALHA NAVAL!!!\n"); 
     
-    for(int i = 0; i < 10; i++)
+    //tabuleiro = 0
+    for (i = 0; i < 10; i++)
     {
-        printf(" %c", letra[i]);
-    } 
-           
+     for( j = 0; j < 10; j++)
+     {
+        tabuleiro[i][j] = 0; 
+     }
+     
+    }
+    
+    //tabuleiro inicial 
+    printf("***Tabuleiro Inicial do Jogo***\n"); 
+    printf("  "); 
+
+    for (j = 0; j < 10; j++)
+    {
+       printf("%c ", 'A' + j); 
+    }
+    printf("\n"); 
+
+    for (i = 0; i < 10; i++)
+    {
+       printf("%2d ", i + 1); 
+        for(j = 0; j < 10; j++)
+        {
+            printf("%d ", tabuleiro[i][j]); 
+        }
+        printf("\n");
+    }
+    
+    //navio horizontal 
+    for(i = 0; i < 3; i++){
+        tabuleiro[4][i + 2] = horizontal[i]; 
+    }
+
+    //navio vertical
+    for(i = 0; i < 3; i++){
+        tabuleiro[i + 6][7] = vertical[i]; 
+    }
+     
+    //tabuleiro com os navios 
+    printf("Tabuleiro com Navios!\n"); 
+
+    printf("  "); 
+    for(j = 0; j < 10; j++){
+        printf("%c ", 'A' + j); 
+    }
+     printf("\n"); 
+
+     for(i = 0; i < 10; i++){
+        printf("%2d ", i + 1); 
+        for(j = 0; j < 10; j++){
+            printf("%d ", tabuleiro[i][j]); 
+        }
+        printf("\n"); 
+     }
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
