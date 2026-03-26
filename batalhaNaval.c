@@ -17,7 +17,7 @@ int main() {
     int vertical[3] = {3, 3, 3}; 
     int i, j; 
     int matriz [linhas][colunas]; 
-    int soma = 0; 
+    int soma = 0;  
 
     printf("JOGO BATALHA NAVAL!!!\n"); 
     
@@ -67,39 +67,30 @@ int main() {
     // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
     //tabuleiro com os navios 
 
-    printf("Tabuleiro com Navios!\n"); 
+   //navio diagonal principal 
+   for(int i = 0; i < 4; i++){
+       matriz[i][i] = 3; 
+   }
 
-    printf("  "); 
-    for(j = 0; j < 10; j++){
-        printf("%c ", 'A' + j); 
-    }
-     printf("\n"); 
+   //navio diagonal secundaria
+   for(int i = 0; i < 4; i++){
+      matriz[i][9 - i] = 3; 
+   }
 
-     for(i = 0; i < 10; i++){
-        printf("%2d ", i + 1); 
-        for(j = 0; j < 10; j++){
-            printf("%d ", tabuleiro[i][j]); 
-        }
-        printf("\n"); 
-     }
-    
-     //navio diagonal secundaria 
-     for(int i = 0; i < 4; i++){
-        matriz[i][9 - 1] = 3; 
-     }
+   //tabuleiro 
+   printf("  "); 
+   for(int j = 0; j < 10; j++){
+       printf("%c ", 'A' + j); 
+   }
+   printf("\n"); 
 
-     //navio diagonal principal 
-        for(int i = 0; i < 4; i++){
-            matriz[i][i] = 3; 
-        } 
-        //tabuleiro 
-        for(int i = 0; i < linhas; i++){
-            for(int j = 0; j < colunas; j++){
-                printf("%d ", matriz[i][j]); 
-            }
-            printf("\n "); 
-        }
-
+   for(int i = 0; i < 10; i++){
+      printf("%2d ", i + 1); 
+      for(int j = 0; j < 10; j++){
+        printf("%d ", matriz[i][j]); 
+      } 
+      printf("\n"); 
+   }
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
     // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
