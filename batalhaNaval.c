@@ -83,6 +83,8 @@ int main() {
        printf("%c ", 'A' + j); 
    }
    printf("\n"); 
+ 
+   printf("***Tabuleiro Com os Navios Posicionados***\n"); 
 
    for(int i = 0; i < 10; i++){
       printf("%2d ", i + 1); 
