@@ -69,12 +69,12 @@ int main() {
 
    //navio diagonal principal 
    for(int i = 0; i < 4; i++){
-       matriz[i][i] = 3; 
+       tabuleiro[i][i] = 3; 
    }
 
    //navio diagonal secundaria
    for(int i = 0; i < 4; i++){
-      matriz[i][9 - i] = 3; 
+      tabuleiro[i][9 - i] = 3; 
    }
 
    //tabuleiro 
@@ -87,7 +87,7 @@ int main() {
    for(int i = 0; i < 10; i++){
       printf("%2d ", i + 1); 
       for(int j = 0; j < 10; j++){
-        printf("%d ", matriz[i][j]); 
+        printf("%d ", tabuleiro[i][j]); 
       } 
       printf("\n"); 
    }
